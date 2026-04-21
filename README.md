@@ -1,5 +1,10 @@
 # DOTI Web Author Portfolio
 
+**YingXin Li**  
+Web Content Operations | Workflow Design | Governance Thinking
+
+---
+
 ## Overview
 This portfolio project documents my DOTI Web Author work with a focus on web content operations, workflow design, and governance thinking.
 
