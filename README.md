@@ -50,3 +50,39 @@ This work shows how I approach website operations as a system, not just as isola
 
 ## Portfolio Focus
 This project reflects my interest in content operations, workflow design, and structured problem-solving inside real operational environments.
+
+---
+
+# Workflow Artifacts
+
+The following artifacts demonstrate structured workflow and communication models developed during web author operations.
+
+## Intake System Design
+
+- [Shared Mailbox Intake Concept](artifacts/shared-mailbox-intake-concept.md)
+
+Defines centralized request intake workflow using a shared mailbox model.
+
+---
+
+## Workflow Structure
+
+- [Phase-Based Workflow Model](artifacts/phase-based-workflow-model.md)
+
+Separates immediate maintenance work from long-term content improvements.
+
+---
+
+## Request Standardization
+
+- [Submission Format Template](artifacts/submission-format-template.md)
+
+Defines required fields for consistent website update requests.
+
+---
+
+## Service Communication
+
+- [Response Timeline Model](artifacts/response-timeline-model.md)
+
+Establishes predictable response expectations for update workflows.
