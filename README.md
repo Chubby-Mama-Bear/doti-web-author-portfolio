@@ -1,6 +1,6 @@
 # DOTI Web Author Portfolio
 
-**YingXin Li**  
+**Chloe Li**  
 Web Content Operations | Workflow Design | Governance Thinking
 
 ---
