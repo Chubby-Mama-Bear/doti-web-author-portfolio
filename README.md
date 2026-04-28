@@ -112,6 +112,8 @@ Defines required fields for consistent website update requests.
 
 Establishes predictable response expectations for update workflows.
 
+---
+
 ## Latest Milestone
 
 **2026-04-27 — Intake Workflow Deployment**
