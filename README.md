@@ -111,3 +111,18 @@ Defines required fields for consistent website update requests.
 - [Response Timeline Model](artifacts/response-timeline-model.md)
 
 Establishes predictable response expectations for update workflows.
+
+## Latest Milestone
+
+**2026-04-27 — Intake Workflow Deployment**
+
+Completed full-cycle intake workflow implementation including:
+
+- JSON-based intake form architecture
+- Accessibility enforcement rules
+- Governance authorization structure
+- Production form deployment
+- Mailbox workflow integration
+
+→ See full entry:  
+`entries/2026-04-27-intake-workflow-deployment.md`
