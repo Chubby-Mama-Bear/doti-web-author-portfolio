@@ -130,12 +130,6 @@ Completed cross-team routing design and automation feasibility activities includ
 - Document output standardization confirmation  
 - Workflow status tracking checkpoint proposal  
 
-→ See entries:
+→ See full entry:
 
-- entries/2026-04-30-cross-team-responsibility.md  
-- entries/2026-04-30-routing-strategy-design.md  
-- entries/2026-04-30-platform-evaluation.md  
-- entries/2026-04-30-power-automate-investigation.md  
-- entries/2026-04-30-supervisor-visibility.md  
-- entries/2026-04-30-output-standardization.md  
-- entries/2026-04-30-status-tracking-proposal.md
+- [2026-04-30 — Cross-Team Workflow Routing & Automation Architecture](entries/2026-04-30-cross-team-routing-automation-architecture.md)
