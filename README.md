@@ -116,20 +116,22 @@ Establishes predictable response expectations for update workflows.
 
 ## Latest Milestone
 
-**2026-04-30 — Cross-Team Workflow Routing & Automation Architecture**
+### 2026-05-05 — Conditional Routing & Governance Architecture
 
-Expanded intake workflow into structured routing and automation readiness planning.
+Expanded OpenForms intake workflow into a governance-aware conditional routing architecture supporting differentiated intake processing and staged validation workflows.
 
-Completed cross-team routing design and automation feasibility activities including:
+Completed workflow governance and operational architecture activities including:
 
-- Responsibility ownership clarification across validation teams  
-- Multi-option workflow routing strategy development  
-- Platform comparison planning (OpenForms vs Microsoft Forms)  
-- Power Automate capability investigation and access coordination  
-- Supervisor-aligned automation exploration  
-- Document output standardization confirmation  
-- Workflow status tracking checkpoint proposal  
+- Conditional routing separation between reviewed and unreviewed submissions
+- RIT pre-validation workflow routing implementation
+- Workflow transition and notification logic debugging
+- OpenForms workflow-state architecture analysis
+- Deterministic review-state routing refinement
+- Governance-aligned intake structure improvements
+- Controlled rollout and stakeholder validation planning
+
+The updated workflow established structured governance-aware intake behavior separating operational execution responsibility from pre-validation review responsibility.
 
 → See full entry:
 
-- [2026-04-30 — Cross-Team Workflow Routing & Automation Architecture](entries/2026-04-30-cross-team-routing-automation-architecture.md)
+- [2026-05-05 — Conditional Routing & Governance Architecture](entries/2026-05-05-conditional-routing-governance-architecture.md)
