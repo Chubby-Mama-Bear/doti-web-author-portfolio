@@ -116,9 +116,9 @@ Establishes predictable response expectations for update workflows.
 
 # Latest Milestone
 
-- **2026-05-12** — Redesigned OpenForms governance routing architecture to automate RIT review workflows using conditional request-type routing logic and reduce user-dependent review-state selection
+* **2026-05-12** — Redesigned OpenForms governance routing architecture to automate RIT review workflows using conditional request-type routing logic and reduce user-dependent review-state selection
 
-- **2026-05-13** — Evaluated intake validation edge cases for large-scale multi-page web updates and analyzed operational boundary alignment between intake usability and governance review workflows
+* **2026-05-13** — Evaluated intake validation edge cases for large-scale multi-page web updates and analyzed operational boundary alignment between intake usability and governance review workflows
 
 ---
 
