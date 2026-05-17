@@ -1,0 +1,726 @@
+{
+  "name": "TheSideQuest — Webhook Prototype",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        16
+      ],
+      "id": "eb0c567e-6078-4c0c-8ced-9d5d1b4bd7aa",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Classify the input idea into structured categories.\n\nReturn structured data that matches the required schema.\n\nStrict Output Rules:\n\n\nparent_topic:\nReturn a short category label.\nMaximum 3 words.\n\n\n\ncore_mechanism:\nWrite EXACTLY one meaningful sentence.\n\nExtract the core_mechanism directly from the input idea whenever possible.\n\nIf the input contains a strong metaphor or analogy,\npreserve that framing instead of replacing it with generic wording.\n\nOnly abstract the mechanism if the input idea does not already contain a clear one.\n\nMaximum 40 words.\nDo not add extra sentences.\n\n\n\nhumor_type:\nMaximum 5 words.\nUse natural descriptive tone.\n\nExample:\ndeadpan corporate satire\n\n\n\nsemantic_bucket:\nReturn a stable meaning-based grouping label.\n\nPurpose:\nUsed as a broad category for future similarity comparison.\n\nRules:\n- Maximum 4 words\n- Should describe the broader conceptual pattern\n- Must be reusable across many similar ideas\n- Avoid being overly specific\n- Avoid trendy buzzwords\n- Use natural language\n\nExamples:\nmetric distortion\nenterprise AI misuse\nworkflow frustration\nhuman process satire\ncorporate overengineering\ntool capability mismatch\n\n\n\ncomparison_phrase:\nWrite EXACTLY one clean comparison sentence.\n\nPurpose:\nUsed later for semantic similarity comparison across ideas.\n\nRules:\n- Maximum 22 words\n- Plain language only\n- Focus on the core situation or contradiction\n- Do not include jokes or punchlines\n- Do not over-explain\n- Must be semantically stable and reusable\n\n\n\nsimilarity_keywords:\n\nReturn 3 to 7 short keywords or short phrases.\n\nPurpose:\nUsed for lightweight future similarity matching.\n\nRules:\n- Keep concise\n- Use lowercase\n- No hashtags\n- No full sentences\n- Prefer reusable concepts over specific details\n\n\n\nmechanism_tags:\n\nReturn 1 to 4 reusable reasoning-pattern tags.\n\nPurpose:\nRepresents the structural logic behind the idea.\n\nRules:\n- Short phrases only\n- Maximum 3 words each\n- Reusable across different ideas\n- Avoid buzzwords\n- Focus on reasoning behavior, not topic category\n\nExamples:\noverconstraint\ncapability mismatch\napproval drag\nsurface optimization\nmetric gaming\noutcome blindness\nliteral compliance\ncontext blindness\npolicy overreach\n\n\n\nsub_angles:\n\nReturn 1 to 5 DISTINCT supporting angles.\n\nEach sub-angle must follow this format:\n\nPattern Name — One layman's explanation sentence.\n\n\n\nPattern Name Rules:\n\n- Must describe a recognizable reasoning or behavior pattern\n- Can include necessary AI or prompt engineering terminology\n- Should remain short (1 to 3 words)\n- Must be reusable across different ideas\n- Avoid corporate buzzword language\n\n\n\nLayman's Sentence Rules:\n\n- Write in simple, everyday language\n- Explain the idea so a non-technical person can understand\n- Avoid jargon unless absolutely necessary\n- Use familiar real-world wording\n- Maximum 18 words\n- Do NOT repeat the core_mechanism\n- Do NOT restate the same idea differently\n- Each sentence must represent a distinct supporting perspective\n\n\n\nTone Guidance:\n\nWrite like you're explaining the situation to someone with no AI background.\nUse plain language without technical jargon.\n\n\n\nExamples of valid Pattern Names:\n\n- Literal Compliance\n- Instruction Ambiguity\n- Surface Metrics\n- Buzzword Padding\n- Context Blindness\n- Approval Drag\n- Confidence Theater\n- Policy Overreach\n- Overconstraint\n- Metric Gaming\n- Outcome Blindness\n\n\n\nformat_rankings:\n\nReturn ALL allowed formats ranked from highest to lowest confidence.\n\nEach must include:\n\n- format\n- confidence\n\n\n\nConfidence Rules:\n\n- Must be between 0.00 and 1.00\n- Use decimals (example: 0.82)\n- Rank formats from highest to lowest confidence.\n\n\n\nAllowed format values:\n\nlong_video:\nLong-form video content (YouTube-style).\nUsed when the idea needs explanation, storytelling, or multiple examples.\n\nshort_reel:\nShort-form video content (under ~60 seconds).\nUsed when the idea can be delivered quickly with strong punchline or visual action.\n\nmeme:\nStatic image-based humor.\nUsed when the idea can be expressed as a single image with short text or caption.\nMust NOT involve moving video.\n\n\n\nReturn ONLY structured output.\nDo not include explanations.\nDo not include commentary.\n\n\n\nIdea:\n{{$json.Idea}}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        848,
+        16
+      ],
+      "id": "65d98a9c-07e2-4b59-81ff-dd2d2b5f02d9",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        864,
+        240
+      ],
+      "id": "a852e1e9-f20f-47b2-a012-9ccf095d295f",
+      "name": "OpenAI Chat Model ",
+      "credentials": {
+        "openAiApi": {
+          "id": "Zeg9xAItLDfYqz8S",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "={\n  \"parent_topic\": \"string\",\n  \"core_mechanism\": \"string\",\n  \"humor_type\": \"string\",\n  \"sub_angles\": [\"string\"],\n  \"format_rankings\": [\n    {\n      \"format\": \"string\",\n      \"confidence\": \"number\"\n    }\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        992,
+        240
+      ],
+      "id": "60b8bfd1-82ee-416b-887f-7cf738962ea9",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "953f711e-17db-4c37-86fa-a1d5bc2a5aa9",
+              "name": "Idea",
+              "value": "={{ $('Webhook').item.json.body.raw_idea }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        16
+      ],
+      "id": "4900faac-dd6e-411c-9525-798a755f752f",
+      "name": "Ideas Injection"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5944e3b9-fef3-4193-ac52-dc476a0fa9cb",
+              "name": "idea_id",
+              "value": "={{ String(Date.now()).slice(-5) + Math.floor(Math.random()*10) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": "=",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        16
+      ],
+      "id": "d7161e98-4411-4ce5-9f85-92d5e972953b",
+      "name": "Generate ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e14ce704-d8e9-4319-8fb7-cc416d1d9f70",
+              "name": "idea_id",
+              "value": "={{$node[\"Generate ID\"].json.idea_id}}",
+              "type": "string"
+            },
+            {
+              "id": "75e7484f-d854-4cb6-89db-cd97c503d830",
+              "name": "created_at",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            },
+            {
+              "id": "fb106355-a78d-4751-807f-9c4dd32aaa9d",
+              "name": "updated_at",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            },
+            {
+              "id": "9630020f-f372-4386-927f-f5ea72f2aafb",
+              "name": "parent_topic",
+              "value": "={{$json.output.parent_topic}}",
+              "type": "string"
+            },
+            {
+              "id": "ac4167f1-eb88-4c28-b8f6-42f65d58d02d",
+              "name": "core_mechanism",
+              "value": "={{$json.output.core_mechanism}}",
+              "type": "string"
+            },
+            {
+              "id": "2693c0fc-338e-484d-930f-93adb415c614",
+              "name": "humor_type",
+              "value": "={{$json.output.humor_type}}",
+              "type": "string"
+            },
+            {
+              "id": "6375b230-019c-426b-9e07-f43658803b26",
+              "name": "sub_angles",
+              "value": "={{$json.output.sub_angles}}",
+              "type": "array"
+            },
+            {
+              "id": "6e6214fd-8989-4ef8-8389-30843e85e435",
+              "name": "format_rankings",
+              "value": "={{$json.output.format_rankings}}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        16
+      ],
+      "id": "f7a212c8-41b5-4637-bd30-41a741322773",
+      "name": "Merge Final Output"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appikNs2E6H17UGPl",
+          "mode": "list",
+          "cachedResultName": "TheSideQuest_IdeaVault",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblJNbymoL8CQdVPL",
+          "mode": "list",
+          "cachedResultName": "Ideas",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl/tblJNbymoL8CQdVPL"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.idea_id }}",
+            "created_at": "={{ $json.created_at }}",
+            "updated_at": "={{ $json.updated_at }}",
+            "parent_topic": "={{ $json.parent_topic }}",
+            "core_mechanism": "={{ $json.core_mechanism }}",
+            "humor_type": "={{ $json.humor_type }}",
+            "sub_angles": "={{ JSON.stringify($json.sub_angles) }}",
+            "format_rankings": "={{ JSON.stringify($json.format_rankings) }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "updated_at",
+              "displayName": "updated_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "parent_topic",
+              "displayName": "parent_topic",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "core_mechanism",
+              "displayName": "core_mechanism",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "humor_type",
+              "displayName": "humor_type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "sub_angles",
+              "displayName": "sub_angles",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "format_rankings",
+              "displayName": "format_rankings",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        1632,
+        224
+      ],
+      "id": "7829d202-5d46-4fef-9516-248012227593",
+      "name": "Create a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Or1p6A1JzUd9kOiS",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appikNs2E6H17UGPl",
+          "mode": "list",
+          "cachedResultName": "TheSideQuest_IdeaVault",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblJNbymoL8CQdVPL",
+          "mode": "list",
+          "cachedResultName": "Ideas",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl/tblJNbymoL8CQdVPL"
+        },
+        "filterByFormula": "={{ \"{id} = \\\"\" + $json.idea_id + \"\\\"\" }}",
+        "returnAll": false,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        1424,
+        -64
+      ],
+      "id": "7db8a057-95b8-442a-8095-3331e400928c",
+      "name": "Search records",
+      "alwaysOutputData": true,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Or1p6A1JzUd9kOiS",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "8a575eed-abeb-436c-88b6-c903049251b2",
+              "leftValue": "={{ $input.all().length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1648,
+        -64
+      ],
+      "id": "2b016d34-8d69-4b36-9afb-9127bd8e366e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appikNs2E6H17UGPl",
+          "mode": "list",
+          "cachedResultName": "TheSideQuest_IdeaVault",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblJNbymoL8CQdVPL",
+          "mode": "list",
+          "cachedResultName": "Ideas",
+          "cachedResultUrl": "https://airtable.com/appikNs2E6H17UGPl/tblJNbymoL8CQdVPL"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "updated_at": "={{ new Date().toISOString() }}",
+            "parent_topic": "={{ $json.parent_topic }}",
+            "core_mechanism": "={{ $json.core_mechanism }}",
+            "humor_type": "={{ $json.humor_type }}",
+            "sub_angles": "={{ JSON.stringify($json.sub_angles) }}",
+            "format_rankings": "={{ JSON.stringify($json.format_rankings) }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "updated_at",
+              "displayName": "updated_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "parent_topic",
+              "displayName": "parent_topic",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "core_mechanism",
+              "displayName": "core_mechanism",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "humor_type",
+              "displayName": "humor_type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "sub_angles",
+              "displayName": "sub_angles",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "format_rankings",
+              "displayName": "format_rankings",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        2096,
+        112
+      ],
+      "id": "d2f338fd-ad5f-42e9-96df-47f141fed088",
+      "name": "Update record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Or1p6A1JzUd9kOiS",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "fields.id",
+              "field2": "idea_id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1936,
+        48
+      ],
+      "id": "dc758d81-0c6a-444b-995f-cfe3b46f3f3a",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "idea-submit",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        160,
+        16
+      ],
+      "id": "e9e51151-fa0d-4ef0-81fa-73de4f40be1b",
+      "name": "Webhook",
+      "webhookId": "fc6988b1-9739-484c-9b5a-e702fa566755"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model ": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Merge Final Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ideas Injection": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate ID": {
+      "main": [
+        [
+          {
+            "node": "Ideas Injection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Final Output": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record": {
+      "main": [
+        []
+      ]
+    },
+    "Search records": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update record": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Update record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Generate ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "437c4daf-06da-4ba7-9443-1139b7c47e03",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "694e15aba4056bfc7ab8fc1b2ae21cd3f754eed8bd64c3277042d2e220ea0b9a"
+  },
+  "id": "1GDxWaW7MFkV6GA7",
+  "tags": []
+}
