@@ -116,28 +116,12 @@ Establishes predictable response expectations for update workflows.
 
 ## Latest Milestone
 
+- **2026-05-12** — Redesigned OpenForms governance routing architecture to automate RIT review workflows using conditional request-type routing logic and reduce user-dependent review-state selection
+
+- **2026-05-13** — Evaluated intake validation edge cases for large-scale multi-page web updates and analyzed operational boundary alignment between intake usability and governance review workflows
+
 ## AI Workflow Prototype
 
 - [TheSideQuest — Webhook Demo](./thesidequest-webhook-demo)
 
 Lightweight deployed frontend prototype connected to a webhook-based n8n AI workflow architecture for idea submission, structured output processing, and Airtable persistence.
-
-### 2026-05-05 — Conditional Routing & Governance Architecture
-
-Expanded OpenForms intake workflow into a governance-aware conditional routing architecture supporting differentiated intake processing and staged validation workflows.
-
-Completed workflow governance and operational architecture activities including:
-
-- Conditional routing separation between reviewed and unreviewed submissions
-- RIT pre-validation workflow routing implementation
-- Workflow transition and notification logic debugging
-- OpenForms workflow-state architecture analysis
-- Deterministic review-state routing refinement
-- Governance-aligned intake structure improvements
-- Controlled rollout and stakeholder validation planning
-
-The updated workflow established structured governance-aware intake behavior separating operational execution responsibility from pre-validation review responsibility.
-
-→ See full entry:
-
-- [2026-05-05 — Conditional Routing & Governance Architecture](entries/2026-05-05-conditional-routing-governance-architecture.md)
