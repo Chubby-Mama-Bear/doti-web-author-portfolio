@@ -116,6 +116,12 @@ Establishes predictable response expectations for update workflows.
 
 ## Latest Milestone
 
+## AI Workflow Prototype
+
+- [TheSideQuest — Webhook Demo](./thesidequest-webhook-demo)
+
+Lightweight deployed frontend prototype connected to a webhook-based n8n AI workflow architecture for idea submission, structured output processing, and Airtable persistence.
+
 ### 2026-05-05 — Conditional Routing & Governance Architecture
 
 Expanded OpenForms intake workflow into a governance-aware conditional routing architecture supporting differentiated intake processing and staged validation workflows.
