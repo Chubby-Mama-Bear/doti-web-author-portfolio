@@ -31,10 +31,29 @@ The original workflow logic included:
 
 By stabilizing the workflow logic in n8n first, the app implementation layer became mostly a translation step. This reduced debugging friction and demonstrated how reasoning-layer clarity can lower implementation cost.
 
-## Prototype Link
+## Screenshots
 
-https://the-side-quest-workflow-translation-prototype--yingxinchloe.replit.app
+### App Overview
+![App Overview](./screenshots/replit-app-overview.JPG)
+
+### Workflow Execution
+![Workflow Execution](./screenshots/workflow-execution-result.JPG)
+
+### Architecture Mapping
+![Architecture Mapping](./screenshots/architecture-mapping.JPG)
+
+## Live Prototype
+
+[View Live Replit Prototype](https://the-side-quest-workflow-translation-prototype--yingxinchloe.replit.app/)
 
 * [TheSideQuest — Replit Workflow-to-App Prototype](./thesidequest-replit-prototype)
 
 Translated stabilized n8n workflow logic into a lightweight Replit application prototype, demonstrating how schema design, deterministic identity handling, and create/update branching can move from automation workflow into deployable app form.
+
+## Key Operational Insight
+
+This prototype reinforced an important workflow design principle:
+
+Reducing operational ambiguity before implementation dramatically lowers AI-assisted development friction.
+
+By stabilizing workflow structure, schema behavior, branching logic, and identity handling inside n8n first, the application translation layer required minimal implementation debugging during Replit generation.
