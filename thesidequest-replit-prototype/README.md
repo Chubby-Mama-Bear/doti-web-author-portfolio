@@ -33,6 +33,8 @@ By stabilizing the workflow logic in n8n first, the app implementation layer bec
 
 ## Prototype Link
 
+https://the-side-quest-workflow-translation-prototype--yingxinchloe.replit.app
+
 * [TheSideQuest — Replit Workflow-to-App Prototype](./thesidequest-replit-prototype)
 
 Translated stabilized n8n workflow logic into a lightweight Replit application prototype, demonstrating how schema design, deterministic identity handling, and create/update branching can move from automation workflow into deployable app form.
