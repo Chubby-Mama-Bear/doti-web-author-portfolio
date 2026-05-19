@@ -44,7 +44,7 @@ By stabilizing the workflow logic in n8n first, the app implementation layer bec
 
 ## Live Prototype
 
-[View Live Replit Prototype](https://the-side-quest-workflow-translation-prototype--yingxinchloe.replit.app/)
+* [View Live Replit Prototype](https://the-side-quest-workflow-translation-prototype--yingxinchloe.replit.app/)
 
 * [TheSideQuest — Replit Workflow-to-App Prototype](./thesidequest-replit-prototype)
 
