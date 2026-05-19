@@ -126,6 +126,19 @@ Establishes predictable response expectations for update workflows.
 
 - [TheSideQuest — Webhook Demo](./thesidequest-webhook-demo)
 
+## Workflow Translation Prototype (Replit + n8n)
+
+Demonstrated how stabilized operational AI workflow architecture can be translated into a deployable application prototype using AI-assisted implementation tooling.
+
+Key concepts demonstrated:
+- deterministic identity handling
+- schema validation
+- create/update branching logic
+- workflow-to-application translation
+- operational ambiguity reduction before implementation
+
+[View Prototype Folder](./thesidequest-replit-prototype)
+
 Lightweight deployed frontend prototype connected to a webhook-based n8n AI workflow architecture for idea submission, structured output processing, and Airtable persistence.
 
 * 2026-05-19 — Translated stabilized n8n AI workflow architecture into a Replit app prototype, validating that reasoning-layer workflow stability can reduce implementation ambiguity and accelerate AI-assisted app generation.
