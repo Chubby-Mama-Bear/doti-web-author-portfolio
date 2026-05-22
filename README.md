@@ -116,7 +116,7 @@ Establishes predictable response expectations for update workflows.
 
 # Latest Milestone
 
-* **2026-05-20** — Clarified governance-aware OpenForms routing behavior with RIT stakeholders and implemented shared OneNote collaboration workspace to reduce cross-team SOP coordination friction
+* **2026-05-21** — Refined DOTI Web Content Change Request governance routing, CMS document lifecycle handling, stakeholder synchronization, and operational edge-case classification supporting scalable intake standardization and go-live readiness.
 
 ---
 
