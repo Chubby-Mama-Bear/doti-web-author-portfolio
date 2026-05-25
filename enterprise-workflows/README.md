@@ -4,4 +4,4 @@ Portfolio category documenting enterprise workflow operations, governance-aware 
 
 ## Included Environments
 
-- DOTI ROWS
+- [DOTI ROWS](./doti-rows/)
