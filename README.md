@@ -1,142 +1,173 @@
 # DOTI Web Author Portfolio
 
-**Chloe Li**  
-Web Content Operations | Workflow Design | Governance Thinking
+Chloe Li  
+Web Operations | Workflow Design | Rapid Prototyping | Governance Thinking
 
 ---
 
 ## Overview
-This portfolio project documents my DOTI Web Author work with a focus on web content operations, workflow design, and governance thinking.
 
-My contribution is not limited to editing public-facing content. I also identify communication gaps, clarify ambiguous work scope, propose more structured intake methods, and help translate loosely defined update work into more repeatable operational processes.
+This portfolio documents applied workflow, governance, and rapid prototyping work across enterprise web operations and independent AI workflow experimentation.
 
----
+The projects included here demonstrate how loosely defined operational problems can be translated into structured systems, repeatable intake logic, deployable prototypes, and operationally readable workflows.
 
-## What This Portfolio Demonstrates
+The focus is not purely software engineering.  
+The emphasis is on:
 
-This portfolio highlights applied workflow and governance thinking in real-world web operations, including:
-
-- Clarifying ambiguous work scope across teams
-- Designing structured intake and response workflows
-- Translating loosely defined requests into repeatable processes
-- Identifying communication gaps affecting delivery timelines
-- Supporting operational stability through documentation design
-
-## Core Skills Demonstrated
-
-- Web Content Governance
-- Workflow Design
-- Cross-Team Communication Coordination
-- Intake Process Design
-- Documentation Architecture
-- Operational Standardization
-- Process Clarity & Scope Definition
-
-## 4/20/2026 Progress Snapshot
-
-### Context
-An early-stage website update effort focused on department mailing address updates inside PDFs revealed multiple workflow and communication gaps affecting coordination across teams.
-
-### Key Contributions
-
-#### Clarified ambiguous scope
-A meeting referred to “address updates” without a shared definition. I followed up directly to confirm that the requested updates referred specifically to department mailing addresses inside PDFs.
-
-#### Identified a cross-team communication gap
-I observed that participants were working from different assumptions with limited shared visibility into what had already been clarified, creating risk for confusion and fragmented execution.
-
-#### Proposed a centralized intake concept
-After recognizing that departments lacked a standardized path for submitting update requests, I proposed using a shared web author mailbox as a centralized intake channel.
-
-#### Introduced phase-based workflow thinking
-I separated the work into Phase 1 for immediate address-related updates and Phase 2 for future content wording and broader content improvements.
-
-#### Planned supporting infrastructure
-I identified supporting tasks needed to make the intake workflow usable in practice, including email signature design, submission format structure, and response timeline expectations.
+- workflow architecture
+- operational reasoning
+- governance-aware design
+- AI-assisted rapid prototyping
+- structured intake systems
+- deployment validation
+- translating ambiguity into executable systems
 
 ---
 
-## Why This Work Matters
-This work shows how I approach website operations as a system, not just as isolated editing tasks. I look at how requests are defined, where ambiguity appears, how teams communicate, and what structure is needed to support more reliable execution.
+# Core Areas
+
+## Enterprise Workflow Operations
+
+Examples of governance-aware operational thinking within enterprise web environments:
+
+- Structured web content intake design
+- Workflow routing logic
+- CMS operational coordination
+- Governance-focused documentation
+- Accessibility-aware publishing operations
+- Repeatable content update processes
+- Communication standardization
 
 ---
 
-## Skills Demonstrated
-- Web content operations
-- Workflow gap identification
-- Scope clarification
-- Cross-team communication analysis
-- Intake process design
-- Phase-based planning
-- Governance-oriented process thinking
-- Operational documentation
+## Rapid Prototyping & Workflow Translation
+
+Examples demonstrating translation of workflow logic into deployable application prototypes using lightweight tooling and AI-assisted development workflows.
+
+Projects include:
+
+- n8n workflow orchestration
+- Webhook simulation interfaces
+- AI normalization pipelines
+- Structured JSON generation
+- Replit deployment validation
+- React + TypeScript prototype generation
+- Workflow-to-application mapping demonstrations
+
+These prototypes are intentionally lightweight and designed to validate workflow architecture, execution logic, and operational feasibility before deeper engineering investment.
 
 ---
 
-## Portfolio Focus
-This project reflects my interest in content operations, workflow design, and structured problem-solving inside real operational environments.
+# Featured Portfolio Sections
+
+## [enterprise-workflows/](./enterprise-workflows)
+
+Operational workflow and governance documentation focused on structured intake systems, content operations, and enterprise process standardization.
+
+Examples include:
+
+- structured intake workflows
+- governance-aware publishing processes
+- operational communication patterns
+- workflow standardization concepts
 
 ---
 
-# Workflow Artifacts
+## [rapid-prototyping/](./rapid-prototyping)
 
-The following artifacts demonstrate structured workflow and communication models developed during web author operations.
+Rapid experimentation environment demonstrating:
 
-## Intake System Design
+- AI-assisted workflow design
+- deployment testing
+- frontend orchestration concepts
+- structured workflow translation
+- prototype execution mapping
 
-- [Shared Mailbox Intake Concept](artifacts/shared-mailbox-intake-concept.md)
+### Included Prototype Areas
 
-Defines centralized request intake workflow using a shared mailbox model.
-
----
-
-## Workflow Structure
-
-- [Phase-Based Workflow Model](artifacts/phase-based-workflow-model.md)
-
-Separates immediate maintenance work from long-term content improvements.
+- [workflow-builder-replit](./rapid-prototyping/workflow-builder-replit)
+- [webhook-deployment-demo](./rapid-prototyping/webhook-deployment-demo)
 
 ---
 
-## Request Standardization
+# Systems Thinking Approach
 
-- [Submission Format Template](artifacts/submission-format-template.md)
+This portfolio reflects a systems-first working style focused on:
 
-Defines required fields for consistent website update requests.
+- identifying operational bottlenecks
+- reducing ambiguity
+- improving repeatability
+- validating workflows quickly
+- balancing governance with usability
+- keeping humans inside operational decision loops
 
----
+The objective is not simply building software.
 
-## Service Communication
-
-- [Response Timeline Model](artifacts/response-timeline-model.md)
-
-Establishes predictable response expectations for update workflows.
-
----
-
-# Latest Milestone
-
-* **2026-05-21** — Refined DOTI Web Content Change Request governance routing, CMS document lifecycle handling, stakeholder synchronization, and operational edge-case classification supporting scalable intake standardization and go-live readiness.
+The objective is building operationally understandable systems that can scale responsibly.
 
 ---
 
-# AI Workflow Prototype
+# Technologies & Platforms
 
-- [TheSideQuest — Webhook Demo](./thesidequest-webhook-demo)
+## Workflow / Automation
 
-## Workflow Translation Prototype (Replit + n8n)
+- n8n
+- Power Automate
+- OpenForms
+- Airtable
 
-Demonstrated how stabilized operational AI workflow architecture can be translated into a deployable application prototype using AI-assisted implementation tooling.
+## Frontend / Prototype
 
-Key concepts demonstrated:
-- deterministic identity handling
-- schema validation
-- create/update branching logic
-- workflow-to-application translation
-- operational ambiguity reduction before implementation
+- React
+- TypeScript
+- Vite
+- Replit
+- Vercel
 
-[View Prototype Folder](./thesidequest-replit-prototype)
+## AI / Structured Processing
 
-Lightweight deployed frontend prototype connected to a webhook-based n8n AI workflow architecture for idea submission, structured output processing, and Airtable persistence.
+- OpenAI APIs
+- JSON schema structuring
+- Prompt workflow design
+- Structured normalization pipelines
 
-* 2026-05-19 — Translated stabilized n8n AI workflow architecture into a Replit app prototype, validating that reasoning-layer workflow stability can reduce implementation ambiguity and accelerate AI-assisted app generation.
+## Enterprise / Operations
+
+- OpenCities CMS
+- Microsoft 365 ecosystem
+- Outlook workflows
+- Governance-oriented intake systems
+
+---
+
+# Portfolio Purpose
+
+This repository serves as a living portfolio documenting:
+
+- operational workflow design
+- rapid prototyping methodology
+- governance-aware systems thinking
+- AI workflow experimentation
+- deployment validation processes
+- workflow-to-application translation capability
+
+The projects here prioritize clarity of reasoning, architecture visibility, and operational structure over polished production engineering.
+
+---
+
+# Repository Navigation
+
+## Rapid Prototyping
+
+| Project | Purpose |
+|---|---|
+| [workflow-builder-replit](./rapid-prototyping/workflow-builder-replit) | Demonstrates translating workflow logic into React + TypeScript application prototypes |
+| [webhook-deployment-demo](./rapid-prototyping/webhook-deployment-demo) | Demonstrates webhook-based workflow orchestration and structured AI processing concepts |
+
+---
+
+# Notes
+
+This repository is intentionally structured as an operational portfolio rather than a traditional software engineering portfolio.
+
+The emphasis is on workflow reasoning, architecture visibility, governance thinking, and rapid validation of operational concepts.
