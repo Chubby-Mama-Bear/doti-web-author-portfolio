@@ -162,7 +162,7 @@ The projects here prioritize clarity of reasoning, architecture visibility, and 
 | Project | Purpose |
 |---|---|
 | [workflow-builder-replit](./rapid-prototyping/workflow-builder-replit) | Demonstrates translating workflow logic into React + TypeScript application prototypes |
-| [webhook-deployment-demo](./rapid-prototyping/webhook-deployment-demo) | Demonstrates webhook-based workflow orchestration and structured AI processing concepts |
+| [webhook-deployment-demo](./rapid-prototyping/webhook-deployment-demo/thesidequest-webhook-demo) | Demonstrates webhook-based workflow orchestration and structured AI processing concepts |
 
 ---
 
