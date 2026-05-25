@@ -120,6 +120,16 @@ without requiring large engineering investment during early-stage experimentatio
 ## Included Evidence
 
 ### Screenshots
-Located in:
-```text
-screenshots/
+Located in: [screenshots/](./screenshots)
+
+Includes visual evidence of UI deployment, workflow mapping, Codex translation, generated project files, normalized JSON output, and workflow execution results.
+
+### Source Files
+Located in: [source-files/](./source-files)
+
+Contains the React + TypeScript prototype files generated during workflow translation validation.
+
+### Architecture Notes
+Located in: [../architecture-notes/workflow-translation-architecture.md](../architecture-notes/workflow-translation-architecture.md)
+
+Contains workflow mapping concepts, operational reasoning notes, and supporting structural documentation.
