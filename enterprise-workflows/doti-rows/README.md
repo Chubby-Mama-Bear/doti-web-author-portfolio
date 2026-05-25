@@ -1,5 +1,7 @@
 # Enterprise Workflow Operations
 
+Portfolio category documenting enterprise workflow operations and governance-aware process architecture.
+
 This section contains portfolio materials related to enterprise workflow operations, governance-aware process design, intake standardization, and operational coordination work.
 
 The projects and documentation in this section focus on improving workflow clarity, operational visibility, routing consistency, and cross-functional collaboration within structured organizational environments.
