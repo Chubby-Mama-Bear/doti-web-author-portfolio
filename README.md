@@ -60,7 +60,7 @@ These prototypes are intentionally lightweight and designed to validate workflow
 
 # Featured Portfolio Sections
 
-## [enterprise-workflows/](./enterprise-workflows)
+## [enterprise-workflows](./enterprise-workflows)
 
 Operational workflow and governance documentation focused on structured intake systems, content operations, and enterprise process standardization.
 
@@ -73,7 +73,7 @@ Examples include:
 
 ---
 
-## [rapid-prototyping/](./rapid-prototyping)
+## [rapid-prototyping](./rapid-prototyping)
 
 Rapid experimentation environment demonstrating:
 
