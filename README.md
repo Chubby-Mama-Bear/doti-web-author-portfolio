@@ -4,10 +4,9 @@ Chloe Li
 
 Web Operations | Workflow Design | Rapid Prototyping | Governance Thinking
 
-> This repository showcases one enterprise workflow project.
-> For additional AI automation projects and services, visit:
->
-> **https://ibuildaithingies.com/**
+> This repository showcases one enterprise workflow project. To explore my broader portfolio of AI automation projects, rapid prototypes, and workflow demonstrations, visit:
+
+## 🌐 [I Build AI Thingies](https://ibuildaithingies.com/)
 
 ---
 
