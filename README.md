@@ -1,7 +1,13 @@
 # DOTI Web Author Portfolio
 
-Chloe Li  
+Chloe Li
+
 Web Operations | Workflow Design | Rapid Prototyping | Governance Thinking
+
+> This repository showcases one enterprise workflow project.
+> For additional AI automation projects and services, visit:
+>
+> **https://ibuildaithingies.com/**
 
 ---
 
